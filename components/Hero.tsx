@@ -36,9 +36,13 @@ const Hero: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200"
           className="w-full h-full object-cover object-center"
           alt="Medical Facility"
+          width="1200"
+          height="800"
+          loading="eager"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-blue-900/90 md:from-blue-900/80 to-blue-900/40 md:to-transparent"></div>
       </motion.div>
@@ -86,7 +90,15 @@ const Hero: React.FC = () => {
           >
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((n) => (
-                <img key={n} src={`https://picsum.photos/100/100?random=${n}`} className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-slate-900" alt="Client" />
+                <img
+                  key={n}
+                  src={`https://picsum.photos/80/80?random=${n}`}
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-slate-900 bg-slate-800"
+                  alt="Client"
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
               ))}
             </div>
             <p className="text-xs sm:text-sm text-slate-300">

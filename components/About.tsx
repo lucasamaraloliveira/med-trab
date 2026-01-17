@@ -17,9 +17,13 @@ const About: React.FC = () => {
         >
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <img
-              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=1000"
+              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800"
               alt="Profissional de Medicina do Trabalho"
               className="w-full h-auto object-cover max-h-[400px] md:max-h-none"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           {/* Experience Badge */}
