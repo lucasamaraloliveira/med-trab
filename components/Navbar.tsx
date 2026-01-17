@@ -17,10 +17,17 @@ const Navbar: React.FC = () => {
   ];
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -31,8 +38,8 @@ const Navbar: React.FC = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className={`w-full max-w-6xl rounded-2xl border transition-all duration-300 pointer-events-auto ${isScrolled
-            ? 'bg-white/90 backdrop-blur-md border-slate-200 shadow-lg py-2'
-            : 'bg-white md:bg-white/10 md:backdrop-blur-md border-slate-100 md:border-white/20 py-3 md:py-4'
+          ? 'bg-white/90 backdrop-blur-md border-slate-200 shadow-lg py-2'
+          : 'bg-white md:bg-white/10 md:backdrop-blur-md border-slate-100 md:border-white/20 py-3 md:py-4'
           }`}
       >
         <div className="px-4 md:px-6 flex items-center justify-between">

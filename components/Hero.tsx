@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 }, // Keep visible to avoid LCP delay
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
+        staggerChildren: 0.05,
+        delayChildren: 0,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0.9, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
@@ -30,9 +30,9 @@ const Hero: React.FC = () => {
     <div className="relative min-h-[100dvh] flex items-center overflow-hidden bg-slate-900 pt-20 md:pt-0">
       {/* Background Image */}
       <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.3 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 1 }}
         className="absolute inset-0 z-0"
       >
         <img
@@ -55,12 +55,11 @@ const Hero: React.FC = () => {
           animate="visible"
           className="space-y-6 md:space-y-8 py-10 md:py-0 text-center md:text-left"
         >
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1]"
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] animate-hero-title"
           >
             Saúde Ocupacional Levada a <span className="text-blue-400">Sério.</span>
-          </motion.h1>
+          </h1>
           <motion.p
             variants={itemVariants}
             className="text-base sm:text-lg text-slate-200 max-w-lg mx-auto md:mx-0"
@@ -93,7 +92,7 @@ const Hero: React.FC = () => {
               {[1, 2, 3, 4].map((n) => (
                 <img
                   key={n}
-                  src={`https://picsum.photos/60/60?random=${n}`}
+                  src={`https://fastly.picsum.photos/60/60?random=${n}`}
                   className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-slate-900 bg-slate-800"
                   alt="Client"
                   width="32"
