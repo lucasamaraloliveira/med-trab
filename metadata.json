@@ -1,0 +1,9 @@
+
+{
+  "name": "Med Trab - Medicina e Segurança do Trabalho",
+  "description": "Site profissional de medicina ocupacional focado em conformidade legal e saúde do colaborador.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
