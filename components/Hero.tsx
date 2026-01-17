@@ -8,20 +8,20 @@ const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.5,
+        ease: "easeOut",
       },
     },
   };
@@ -36,13 +36,14 @@ const Hero: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=75&w=1200"
           className="w-full h-full object-cover object-center"
           alt="Medical Facility"
           width="1200"
           height="800"
           loading="eager"
           fetchpriority="high"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-blue-900/90 md:from-blue-900/80 to-blue-900/40 md:to-transparent"></div>
       </motion.div>
@@ -92,12 +93,13 @@ const Hero: React.FC = () => {
               {[1, 2, 3, 4].map((n) => (
                 <img
                   key={n}
-                  src={`https://picsum.photos/80/80?random=${n}`}
+                  src={`https://picsum.photos/60/60?random=${n}`}
                   className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-slate-900 bg-slate-800"
                   alt="Client"
-                  width="40"
-                  height="40"
+                  width="32"
+                  height="32"
                   loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>
