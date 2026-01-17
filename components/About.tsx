@@ -17,11 +17,11 @@ const About: React.FC = () => {
         >
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <img
-              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800"
+              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=650"
               alt="Profissional de Medicina do Trabalho"
               className="w-full h-auto object-cover max-h-[400px] md:max-h-none"
-              width="800"
-              height="600"
+              width="650"
+              height="480"
               loading="lazy"
               decoding="async"
             />
