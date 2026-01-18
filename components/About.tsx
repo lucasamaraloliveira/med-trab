@@ -111,69 +111,71 @@ const About: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 50 }}
-              className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <button
                 onClick={() => setIsStoryOpen(false)}
-                className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-blue-600 hover:text-white transition-all duration-300 z-10"
+                className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-slate-100/80 backdrop-blur-sm text-slate-500 hover:bg-blue-600 hover:text-white transition-all duration-300 z-20"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              <div className="p-8 md:p-12">
-                <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                  Nossa Jornada
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
-                  Transformando Segurança em <span className="text-blue-600">Estratégia</span>
-                </h3>
+              <div className="overflow-y-auto custom-scrollbar pb-8">
+                <div className="p-8 md:p-12">
+                  <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                    Nossa Jornada
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                    Transformando Segurança em <span className="text-blue-600">Estratégia</span>
+                  </h3>
 
-                <div className="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
-                  <p>
-                    Fundada em 2009, a **Med Trab** nasceu com o propósito de desmistificar a medicina do trabalho. Percebemos que muitas empresas viam a conformidade legal apenas como um custo ou uma burocracia necessária.
-                  </p>
-                  <p>
-                    Nossa trajetória é marcada por inovação e proximidade. Fomos pioneiros na implementação de unidades móveis totalmente equipadas, levando saúde diretamente para dentro dos parques industriais de nossos clientes, reduzindo o absenteísmo e aumentando o cuidado real.
-                  </p>
+                  <div className="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
+                    <p>
+                      Fundada em 2009, a **Med Trab** nasceu com o propósito de desmistificar a medicina do trabalho. Percebemos que muitas empresas viam a conformidade legal apenas como um custo ou uma burocracia necessária.
+                    </p>
+                    <p>
+                      Nossa trajetória é marcada por inovação e proximidade. Fomos pioneiros na implementação de unidades móveis totalmente equipadas, levando saúde diretamente para dentro dos parques industriais de nossos clientes, reduzindo o absenteísmo e aumentando o cuidado real.
+                    </p>
 
-                  <div className="grid sm:grid-cols-2 gap-6 py-6 border-y border-slate-100">
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                        Missão
-                      </h4>
-                      <p className="text-xs md:text-sm">Oferecer soluções integradas em saúde e segurança que potencializem o capital humano das empresas.</p>
+                    <div className="grid sm:grid-cols-2 gap-6 py-6 border-y border-slate-100">
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                          Missão
+                        </h4>
+                        <p className="text-xs md:text-sm">Oferecer soluções integradas em saúde e segurança que potencializem o capital humano das empresas.</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                          Visão
+                        </h4>
+                        <p className="text-xs md:text-sm">Ser a referência nacional em gestão de riscos ocupacionais até 2030, através da tecnologia e cuidado humano.</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                        Visão
-                      </h4>
-                      <p className="text-xs md:text-sm">Ser a referência nacional em gestão de riscos ocupacionais até 2030, através da tecnologia e cuidado humano.</p>
-                    </div>
+
+                    <p>
+                      Hoje, com mais de 15 anos de estrada e 500+ clientes ativos, continuamos com o mesmo espírito: cuidar de quem faz a sua empresa crescer. Porque para nós, segurança do trabalho não é sobre papéis, é sobre **vida**.
+                    </p>
                   </div>
 
-                  <p>
-                    Hoje, com mais de 15 anos de estrada e 500+ clientes ativos, continuamos com o mesmo espírito: cuidar de quem faz a sua empresa crescer. Porque para nós, segurança do trabalho não é sobre papéis, é sobre **vida**.
-                  </p>
-                </div>
-
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={() => setIsStoryOpen(false)}
-                    className="flex-1 bg-slate-900 text-white py-4 px-8 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-lg"
-                  >
-                    Fechar História
-                  </button>
-                  <a
-                    href="#contato"
-                    onClick={() => setIsStoryOpen(false)}
-                    className="flex-1 border-2 border-blue-600 text-blue-600 py-4 px-8 rounded-2xl font-bold text-center hover:bg-blue-50 transition-all"
-                  >
-                    Falar com Especialista
-                  </a>
+                  <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                    <button
+                      onClick={() => setIsStoryOpen(false)}
+                      className="flex-1 bg-slate-900 text-white py-4 px-8 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-lg"
+                    >
+                      Fechar História
+                    </button>
+                    <a
+                      href="#contato"
+                      onClick={() => setIsStoryOpen(false)}
+                      className="flex-1 border-2 border-blue-600 text-blue-600 py-4 px-8 rounded-2xl font-bold text-center hover:bg-blue-50 transition-all"
+                    >
+                      Falar com Especialista
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -157,39 +157,41 @@ const Services: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden"
+              className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <button
                 onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-100/80 backdrop-blur-sm text-slate-500 hover:bg-slate-200 transition-colors z-20"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              <div className="p-8 md:p-10">
-                <div className="text-5xl mb-6">{selectedService.icon}</div>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{selectedService.title}</h3>
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
-                  {selectedService.details}
-                </p>
+              <div className="overflow-y-auto custom-scrollbar flex-1">
+                <div className="p-8 md:p-10">
+                  <div className="text-5xl mb-6">{selectedService.icon}</div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{selectedService.title}</h3>
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
+                    {selectedService.details}
+                  </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={whatsappUrl(selectedService.title)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-2xl font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
-                  >
-                    Falar com Consultor
-                  </a>
-                  <button
-                    onClick={() => setSelectedService(null)}
-                    className="flex-1 bg-slate-100 text-slate-700 py-4 px-6 rounded-2xl font-bold text-center hover:bg-slate-200 transition-all"
-                  >
-                    Fechar
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href={whatsappUrl(selectedService.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-2xl font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
+                    >
+                      Falar com Consultor
+                    </a>
+                    <button
+                      onClick={() => setSelectedService(null)}
+                      className="flex-1 bg-slate-100 text-slate-700 py-4 px-6 rounded-2xl font-bold text-center hover:bg-slate-200 transition-all"
+                    >
+                      Fechar
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

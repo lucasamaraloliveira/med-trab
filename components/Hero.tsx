@@ -92,9 +92,14 @@ const Hero: React.FC = () => {
               {[1, 2, 3, 4].map((n) => (
                 <img
                   key={n}
-                  src={`https://fastly.picsum.photos/60/60?random=${n}`}
+                  src={
+                    n === 1 ? "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=64&h=64" :
+                      n === 2 ? "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=64&h=64" :
+                        n === 3 ? "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=64&h=64" :
+                          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=64&h=64"
+                  }
                   className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-slate-900 bg-slate-800"
-                  alt="Client"
+                  alt={`Cliente ${n}`}
                   width="32"
                   height="32"
                   loading="lazy"
